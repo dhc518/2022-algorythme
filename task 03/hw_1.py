@@ -1,5 +1,8 @@
-from unsorted import numbers
-# from sorted import numbers
+import time
+start = time.time()
+
+# from unsorted import numbers
+from sorted import numbers
 
 to_find = [
   5378654,1096519,2575130,7912393,8847484,1391621,9669847,2030367,
@@ -22,3 +25,5 @@ for num in to_find:
       print("%d at #%d" % (num, i))
       break
   if not found: print("%d Not found" % num)
+  
+print("time :", time.time() - start)
