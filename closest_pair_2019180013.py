@@ -70,14 +70,14 @@ def closest_pair(array, start, end): #end=inclusive
   if size == 2:
     return start, end, distance(array[start], array[end])
   if size == 3:
-    return closest_pair(array, start, end)
+    return closest_of_three(array, start, end)
 
    # mid = start + size // 2 -1
   last_left = (start + end) // 2 #3개 2개 나누기
   ls, le, ld = closest_pair(array, start, last_left)
   rs, re, rd = closest_pair(array, last_left+1, end)
 
-  s, e, d = ls, le, ld if ld <= rd else (rs, re, rd)
+  s, e, d = (ls, le, ld) if ld <= rd else (rs, re, rd)
 
   x1 = array[last_left].x - d
   x2 = array[last_left].x + d
@@ -119,7 +119,7 @@ def closest_pair(array, start, end): #end=inclusive
       if dy > d:
         break
 
-      dd = math.sqtr((c1.x - c2.x) ** 2 + dy ** 2)
+      dd = math.sqrt((c1.x - c2.x) ** 2 + dy ** 2)
       if dd < d:
         s, e, d = c1.index, c2.index, dd
 
@@ -134,7 +134,6 @@ print('정렬 후',cities)
 
 
 cities_y = sorted(cities, key=lambda c:c.y)
-
 #closest_of_three(cities, 0, n_cities - 1)
 s, e, d = closest_pair(cities, 0, n_cities - 1)
 print(f'{cities[s]} ~ {cities[e]} : {d:.1f}')
