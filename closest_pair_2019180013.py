@@ -127,11 +127,11 @@ def closest_pair(array, start, end): #end=inclusive
 
 n_cities = len(cities)
 print('정렬 전', cities)
-print('정렬 후')
-cities.sort(key=lambda c:c.x)
+cities.sort(key=lambda c: c.x)
 for i in range(n_cities):
   cities[i].index = i
-print(cities)
+print('정렬 후',cities)
+
 
 cities_y = sorted(cities, key=lambda c:c.y)
 
