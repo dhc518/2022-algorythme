@@ -1,0 +1,31 @@
+연속 행렬 곱셈
+	연속된 행렬들의 곱셈에 필요한 원소 간의 최소 곱셈 		횟수를 찾는 문제
+
+O(n^3) 
+
+for i = 1 to n
+	C[i,i] = 0
+for L = 1 to n-1
+	for i = 1 to n - L
+		j = i + :
+		C[i,j] = infinity
+		for k = i tp j -1
+			temp = C[i,k] + C[k+1,j]+d(i-1)d(k)d(j)
+			if(temp < C[i,j])
+				C[i,j] = temp
+retun C[i,j]
+
+배낭 문제
+용량 C
+무게 w
+가치 v
+for i = 0 to n k[i,0] =0
+for w = 0 to C K[0, w]=0
+for i = 1 to n
+	for w = i to C
+		if (w(i) >w)
+
+시간 복잡도
+O(nC)
+
+		
